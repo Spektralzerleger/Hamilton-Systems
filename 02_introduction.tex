@@ -1,0 +1,39 @@
+\chapter{Introduction}
+
+The constraints, that we are talking about here, are not like the constraints in classical mechanics. They appear when we try to get from the Lagrange to the Hamilton formalism. 
+\begin{itemize}
+\item $L(q_i,\dot{q}_i)$, \ where $i = 1, ..., n$ degrees of freedom \\
+The mechanical properties of a system are completly described by the Lagrangian. 
+\end{itemize}
+We will study constraints from a mathematical point of view, not a physical:
+\begin{itemize}
+\item Classical mechanics: physical constraints lead to changes in the mathematical description.
+\item Now: most general description of Hamiltonian theory. The constraints will follow from the Lagrangian.
+\end{itemize}
+
+Why do we need the Hamilton formalism? \\
+The most important fact is that a Hamiltonian system (described by coordinates $q_i$ and momenta $p_i$) can be quantized in a canonical way:
+\begin{align}
+L(q_i,\dot{q}_i) \ \longrightarrow \ H(q_i,p_i) \ \longrightarrow \ H(\hat{q}_i,\hat{p}_i) .
+\end{align}
+Nowadays, there are of course other methods of quantization, like the Feynman path integral, but we won't focus on quantization here. For us, it is important to know what happens when we try to get from the Lagrangian to the Hamiltonian. \\
+
+How does it work?
+\begin{enumerate}
+\item Calculate the generalized momenta
+\begin{align}\label{eq:momentum}
+q_i \ \longrightarrow \ p_i \equiv \frac{\partial L(q_i,\dot{q}_i)}{\partial \dot{q}_i}.
+\end{align}
+This step is always possible, it results in $p_i(q_i,\dot{q}_i)$.
+\item Build the Hamiltonian
+\begin{align}\label{eq:hamilton}
+H(q_i,p_i) = \sum_{i = 1}^n p_i \dot{q}_i - L(q_i,\dot{q}_i).
+\end{align}
+The expression on the right side still contains the velocities $\dot{q}_i$, so we have to express them through the generalized coordinates and momenta, by inverting \eqref{eq:momentum}
+\begin{align}
+p_i(q_i,\dot{q}_i) \longrightarrow \dot{q}_i = \dot{q}_i(q_i,p_i),
+\end{align}
+and insert in the equation \eqref{eq:hamilton}. Sometimes (if the Lagrangian is degenerate), this step is not possible. We will investigate, what to do in this cases.
+\end{enumerate} 
+
+We will start with discrete and finite dimensional systems and then move on to continuous systems by introducing field theoretical aspects.
