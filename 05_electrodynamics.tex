@@ -1,0 +1,181 @@
+\chapter{Electrodynamics}
+In this chapter, we would like to present an important example of field theory. We want to focus on the Hamiltonian description of electrodynamics and see that it yields the classical results. The Lagrangian of the free electromagnetic field without charges is
+\begin{align}
+L[A^{\mu}(\bar{x}), \dot{A}^{\mu}(\bar{x})]  = - \frac{1}{4} \displaystyle\int d^3 x \ F_{\mu \nu}(\bar{x}) F^{\mu \nu}(\bar{x}),
+\end{align}
+where we use natural units and
+\begin{align}
+F_{\mu \nu}(\bar{x}) = \partial_{\mu} A_{\nu}(\bar{x}) - \partial_{\nu} A_{\mu}(\bar{x})
+\end{align}
+is the antisymmetric field tensor. Since it is expressed through the vector potential $A^{\mu}(\bar{x})$, the vector potential takes the role of our field $\varphi(\bar{x})$. Note that we have four different fields, since $\mu = 0,1,2,3$.
+That's why we define the generalized momenta to be
+\begin{align}
+\pi_{\rho}(\bar{y}) = \frac{\delta L}{\delta \dot{A}^{\rho}(\bar{y})}.
+\end{align}
+Inserting the Lagrangian, one gets
+\begin{align}
+\pi_{\rho}(\bar{y}) &= \frac{\delta L}{\delta \dot{A}^{\rho}(\bar{y})} = - \frac{1}{4} \int d^3 x \ \frac{\delta \left( F_{\mu \nu}(\vec{x}) F^{\mu \nu}(\bar{x}) \right)}{\delta \dot{A}^{\rho}(\bar{y})} \notag \\
+&= - \frac{1}{2} \int d^3 x \ F_{\mu \nu}(\bar{x}) \ \frac{\delta \left(\partial^{\mu} A^{\nu}(\bar{x}) - \partial^{\nu} A^{\mu}(\bar{x}) \right)}{\delta \dot{A}^{\rho}(\bar{y})} \notag \\
+&= - \frac{1}{2} \int d^3 x \ F_{\mu \nu}(\bar{x}) \left( \delta_0^{\mu} \ \frac{\delta \dot{A}^{\nu}(\bar{x})}{\delta \dot{A}^{\rho}(\bar{y})} - \delta_0^{\nu} \ \frac{\delta \dot{A}^{\mu}(\bar{x})}{\delta \dot{A}^{\rho}(\bar{y})} \right) \notag \\
+&= - \frac{1}{2} \int d^3 x \ F_{\mu \nu}(\bar{x}) \left( \delta_0^{\mu} \delta_{\rho}^{\nu} \ \delta^3(\bar{x} - \bar{y}) - \delta_0^{\nu} \delta_{\rho}^{\mu} \ \delta^3(\bar{x} - \bar{y}) \right) \notag \\
+&= - \frac{1}{2} \int d^3 x \ \left( F_{0 \rho}(\bar{x}) \ \delta^3(\bar{x} - \bar{y}) - F_{\rho 0}(\bar{x}) \ \delta^3(\bar{x} - \bar{y}) \right) \notag \\
+&= - \frac{1}{2} \left( F_{0 \rho}(\bar{y}) - F_{\rho 0}(\bar{y}) \right) = F_{\rho 0}(\bar{y}) .
+\end{align}
+Using the explicit formula for $F_{\mu \nu}$, the generalized momenta can be written as
+\begin{align}
+\pi_{\rho}(\bar{y}) = \partial_{\rho} A_0(\bar{y}) - \dot{A}_{\rho}(\bar{y}).
+\end{align}
+\label{sec:electrodynamics_primary_constraints}
+To find the Hamiltonian, one has to invert this equation and express $\dot{A}_{\rho}(\vec{y})$ through $\pi_{\rho}(\vec{y})$ and the field components. We see that this won't be possible for $\rho = 0$, we have a primary constraint:
+\begin{align}
+\pi_0(\bar{y}) = \partial_0 A_0(\bar{y}) - \dot{A}_0(\bar{y}) = 0 \ \ \ \Longrightarrow \ \ \ \phi_1 = \pi_0(\bar{y}) = 0 \ \ \forall \bar{y} \in \mathbb{R}^3.
+\end{align}
+More exactly, we have infinitly many constraints because the momentum $\pi_0(\bar{y})$ vanishes in every point in space. This corresponds to the gauge freedom of $A^0(\bar{x})$ as we will see later. No matter how we choose it, the conjugated momentum vanishes identically. For the other components, everything is fine and no more constraints arise. \\
+\label{sec:electrodynamics_hamiltonian}
+The Hamiltonian is therefore
+\begin{align}
+H[A^{\mu}(\bar{x}), \pi_{\mu}(\bar{x})] &= \int d^3 x \ \dot{A}^{\mu}(\bar{x}) \pi_{\mu}(\bar{x}) \ - \ L[A^{\mu}(\bar{x}), \dot{A}^{\mu}(\bar{x})] \notag \\
+&= \int d^3 x \ \dot{A}^{\mu}(\bar{x}) \pi_{\mu}(\bar{x}) \ + \  \frac{1}{4} \displaystyle\int d^3 x \ F_{\mu \nu}(\bar{x}) F^{\mu \nu}(\bar{x}) \notag \\
+&= \int d^3 x \left( \dot{A}^{i}(\bar{x}) \pi_{i}(\bar{x}) + \frac{1}{2} F_{i 0}(\bar{x}) F^{i 0}(\bar{x}) + \frac{1}{4} F_{i k}(\bar{x}) F^{i k}(\bar{x}) \right) \notag \\
+&= \int d^3 x \left( \left( \pi_i(\bar{x}) - \partial_i A_0(\bar{x}) \right) \pi_i(\bar{x}) + \frac{1}{2} \pi_i(\bar{x}) (- \pi_i(\bar{x})) + \frac{1}{4} F_{i k}(\bar{x}) F^{i k}(\bar{x}) \right) \notag \\
+&= \int d^3 x \left( \frac{1}{2} \pi_i(\bar{x})\pi_i(\bar{x}) - \partial_i A_0(\bar{x}) \pi_i(\bar{x}) + \frac{1}{4} F_{i k}(\bar{x}) F^{i k}(\bar{x}) \right) \notag \\
+&= \int d^3 x \left( \frac{1}{2} \pi_i(\bar{x})\pi_i(\bar{x}) + A_0(\bar{x}) \partial_i \pi_i(\bar{x}) + \frac{1}{4} F_{i k}(\bar{x}) F^{i k}(\bar{x}) \right),
+\end{align}
+where in the last step we integrated by parts and assumed that the fields vanish at infinity. Terms like $\pi_i(\bar{x})\pi_i(\bar{x})$, where both indices are down or up, denote usual summation. \\ 
+The first term contains the momenta and is equivalent to the kinetic energy. The last term contains spatial derivatives of the fied components and is therefore equivalent to a potential energy. The second term is a mix of kinetic and potential energy and should not appear in a regular Hamiltonian. We have to check whether the consistency condition for our primary constraint is fulfilled or we have secondary constraints. \\
+The total Hamiltonian is 
+\begin{align}
+H_T = H + \int d^3 x \ u(\bar{x}) \pi_0(\bar{x}).
+\end{align}
+And the equation of motion is given by 
+\begin{align}
+\dot{g} = \left \{ g,H_T \right \} = \left \{ g,H \right \} + \int d^3 x \ u(\bar{x}) \left \{ g,\pi_0(\bar{x}) \right \},
+\end{align}
+where the Poisson bracket is given by
+\begin{align}
+\left \{ f,g \right \} = \int d^3 z \left( \frac{\delta f}{\delta A^{\mu}(\bar{z})} \frac{\delta g}{\delta \pi_{\mu}(\bar{z})} - \frac{\delta g}{\delta A^{\mu}(\bar{z})} \frac{\delta f}{\delta \pi_{\mu}(\bar{z})}  \right),
+\end{align}
+analog to the definition in field theory. It follows that
+\begin{align}
+0 \overset{!}{=} \dot{\pi}_0(\bar{y}) &= \left \{ \pi_0(\bar{y}),H(\bar{y}) \right \} + \int d^3 x \ u(\bar{x}) \left \{ \pi_0(\bar{y}),\pi_0(\bar{x}) \right \} \notag \\
+&= - \int d^3 z \ \frac{\delta \pi_0(\bar{y})}{\delta \pi_{\mu}(\bar{z})} \frac{\delta H(\bar{y})}{\delta A^{\mu}(\bar{z})} = - \frac{\delta H(\bar{y})}{\delta A^0(\bar{y})} \notag \\
+&= - \int d^3 x \ \partial_i \pi_i(\bar{x}) \frac{\delta A^0(\bar{x})}{\delta A^0(\bar{y})} = - \partial_i \pi_i(\bar{y}).
+\end{align}
+\label{sec:electrodynamics_secondary_constraints}
+So we really get a secondary constraint which is
+\begin{align}
+\phi_2 = \partial_i \pi_i = \text{div} \ \bar{\pi} = 0.
+\end{align}
+Again we have to proof that this constraint is fulfilled at every moment (if not, then the primary constraint wouldn't be fulfilled at every moment). \\
+It follows that
+\begin{align}
+0 \overset{!}{=} \frac{d}{dt} \Big( \partial_i \pi_i(\bar{y}) \Big) &= \left \{ \partial_i \pi_i(\bar{y}),H(\bar{y}) \right \} + \int d^3 x \ u(\bar{x}) \left \{ \partial_i \pi_i(\bar{y}),\pi_0(\bar{x}) \right \} \notag \\
+&= - \int d^3 z \ \frac{\delta (\partial_i B_i(\bar{y}))}{\delta B_{\mu}(\bar{z})} \frac{\delta H(\bar{y})}{\delta A^{\mu}(\bar{z})} = - \int d^3 z \  \partial_i \left(\delta^3(\bar{y} - \bar{z})\right) \frac{\delta H(\bar{y})}{\delta A^i(\bar{z})} \notag \\
+&= - \partial^i \left( \frac{\delta H(\bar{y})}{\delta A^i(\bar{y})} \right),
+\end{align}
+where the variation is given by 
+\begin{align}
+\frac{\delta H(\bar{y})}{\delta A^i(\bar{y})} &= \frac{\delta}{\delta A^i(\bar{y})} \left( \frac{1}{4} \int d^3 x \ F_{lk}(\bar{x})F^{lk}(\bar{x}) \right) \notag \\
+&= \frac{1}{2} \int d^3 x \ F_{lk}(\bar{x}) \frac{\delta F^{lk}(\bar{x})}{\delta A^i(\bar{y})} \notag \\
+&= \frac{1}{2} \int d^3 x \ F_{lk}(\bar{x}) \frac{\delta (\partial^l A^k(\bar{x}) - \partial^k A^l(\bar{x}))}{\delta A^i(\bar{y})} \notag \\
+&= \frac{1}{2} \int d^3 x \ F_{lk}(\bar{x}) \left( \delta_i^k  \partial^l \left(\delta^3(\bar{x} - \bar{y})\right) - \delta_i^l  \partial^k \left(\delta^3(\bar{x} - \bar{y})\right) \right) \notag \\
+&= \frac{1}{2} \int d^3 x \ \left( - \partial^l F_{li}(\bar{x}) + \partial^k F_{ik}(\bar{x}) \right) \delta^3(\bar{x} - \bar{y}) \notag \\
+&= - \partial^k F_{ki}(\bar{y}).
+\end{align}
+In the end, we get
+\begin{align}
+\frac{d}{dt} \Big( \partial_i \pi_i(\bar{y}) \Big) = \partial^i \partial^k F_{ki}(\bar{y}),
+\end{align}
+which is clearly zero since we have a contraction of a symmetric with an antisymmetric tensor. So the secondary constraint is automatically conserved and we get no more constraints. \\
+
+Now, that our procedure is finished, we can classify the constraints and say which is first-class and which is second-class.
+Since both constraints depends only on the momentum, they are first-class. So one can write the generalized Hamiltonian as
+\begin{align}
+H_E = H + \int d^3 x \ v(\bar{x}) \pi_0(\bar{x}) + \int d^3 x \ V(\bar{x}) \partial_i \pi_i(\bar{x}),
+\end{align}
+where $v(\bar{x})$ and $V(\bar{x})$ are arbitrary functions. \\
+
+\label{sec:electrodynamics_transformations}
+Since we have two undetermined functions in our Hamiltonian, this corresponds to two degrees of gauge freedom.
+Let's see what transformations $g \longrightarrow g' = g + \delta g$ these first-class constraints do generate. \\
+We calculate the small shift $\delta g$ analog to the classical discrete case:
+\begin{align}
+\delta g = \varepsilon_m \left\{ g,\phi_m \right\} \ \ \ \Longrightarrow \ \ \ \delta g = \int d^3 y \ \varepsilon(\bar{y}) \left\{ g,\phi(\bar{y}) \right\}.
+\end{align}
+We also have a kind of canonical commutation relation
+\begin{align}
+\left\{ A^{\mu}(\bar{x}), \pi_{\nu}(\bar{y}) \right\} = \delta_{\nu}^{\mu} \ \delta^3(\bar{x} - \bar{y}),
+\end{align}
+analog to $\left\{ q_i, p_k \right\} = \delta_{ik}$. Now, we are able to determine the gauge transformations generated by the two constraints. 
+
+\begin{itemize}
+\item Choosing $g = A^{\mu}(\bar{x})$, we get for the first constraint:
+\begin{align}
+\delta A^{\mu}(\bar{x}) &= \int d^3 y \ \varepsilon(\bar{y}) \left\{ A^{\mu}(\bar{x}), \pi_0(\bar{y}) \right\} \notag \\
+&= \int d^3 y \ \varepsilon(\bar{y}) \ \delta_0^{\mu} \ \delta^3(\bar{x} - \bar{y}) \notag \\
+&= \delta_0^{\mu} \ \varepsilon(\bar{x}).
+\end{align}
+So the first constraint only generates transformations 
+\begin{align}
+A_0(\bar{x}) \ \longrightarrow \ A'_0(\bar{x}) = A_0(\bar{x}) + \varepsilon(\bar{x})
+\end{align}
+and leaves the momentum unchanged since $\left\{ \pi_{\mu}(\bar{x}), \pi_0(\bar{y}) \right\} = 0$.
+\item The second constraint leaves the momentum unchanged too because of the same reason. Furthermore it leaves $A_0$ unchanged because the constraint contains only spatial terms and the Poisson bracket vanishes. So we have
+\begin{align}
+\delta A^k(\bar{x}) &= \int d^3 y \ \tilde{\varepsilon}(\bar{y}) \left\{ A^k(\bar{x}), \partial_i \pi_i(\bar{y}) \right\} \notag \\
+&= - \int d^3 y \ \tilde{\varepsilon}(\bar{y}) \ \delta_i^k \ \partial^i \left( \delta^3(\bar{x} - \bar{y}) \right) \notag \\
+&= \partial^k \tilde{\varepsilon}(\bar{x}).
+\end{align}
+So the second constraint generates transformations 
+\begin{align}
+A^k(\bar{x}) \ \longrightarrow \ A'^k(\bar{x}) = A^k(\bar{x}) + \partial^k \tilde{\varepsilon}(\bar{x}),
+\end{align}
+or in vector notation
+\begin{align}
+\bar{A}(\bar{x}) \ \longrightarrow \ \bar{A}'(\bar{x}) = \bar{A}(\bar{x}) + \nabla \tilde{\varepsilon}(\bar{x}).
+\end{align}
+\end{itemize}
+
+So one can write the generalized Hamiltonian as
+\begin{align}
+H_E &= \int d^3 x \left( \frac{1}{2} \pi_i(\bar{x})\pi_i(\bar{x}) + (A_0(\bar{x}) + V(\bar{x})) \partial_i \pi_i(\bar{x}) + \frac{1}{4} F_{i k}(\bar{x}) F^{i k}(\bar{x}) + v(\bar{x}) \pi_0(\bar{x}) \right) \notag \\
+&= \int d^3 x \left( \frac{1}{2} \pi_i(\bar{x})\pi_i(\bar{x}) + V(\bar{x}) \partial_i \pi_i(\bar{x}) + \frac{1}{4} F_{i k}(\bar{x}) F^{i k}(\bar{x}) + v(\bar{x}) \pi_0(\bar{x}) \right),
+\end{align}
+because of the gauge freedom of $A_0$, and we see that no mixed terms with momenta and coordinates appear. The Hamiltonian is regular and can be devided in a kinetic and potential energy part. \\
+
+Let's analyse the spatial part of the Hamiltonian and see what it means in terms of the electric field $\bar{E}$ and the magnetic field $\bar{B}$. \\
+Remembering that the electromagnetic field tensor in natural units is
+\begin{align}
+F^{\mu \nu} = 
+\left( 
+\arraycolsep=1.4pt\def\arraystretch{1.2}
+\begin{array}{cccc}
+0 & - E^1 & - E^2 & - E^3 \\
+E^1 & 0 & - B^3 & B^2 \\
+E^2 & B^3 & 0 & - B^1 \\
+E^3 & - B^2 & B^1 & 0  
+\end{array} \right) \ \ \
+\text{and} \ \ \
+\bar{B} = \nabla \times \bar{A},
+\end{align}
+the momentum is nothing more than the electric field:
+\begin{align}
+\pi^i = F^{i 0} = E^i.
+\end{align}
+Moreover, if one notices that 
+\begin{align}
+\bar{B}^2 &= \left( \varepsilon_{ijk} \partial^j A^k \right) \left( \varepsilon_{ilm} \partial^l A^m \right) \notag \\
+&= \left( \delta_{jl} \delta_{km} - \delta_{jm} \delta_{kl} \right)  \partial^j A^k \partial^l A^m \notag \\
+&= \partial_l A_m(\bar{x}) \partial^l A^m(\bar{x}) - \partial_m A_l(\bar{x}) \partial^l A^m(\bar{x}), 
+\end{align}
+we can rewrite
+\begin{align}
+F_{i k}(\bar{x}) F^{i k}(\bar{x}) &= \big( \partial_i A_k(\bar{x}) - \partial_k A_i(\bar{x}) \big) \left( \partial^i A^k(\bar{x}) - \partial^k A^i(\bar{x}) \right) \notag \\
+&= 2 \left( \partial_i A_k(\bar{x}) \partial^i A^k(\bar{x}) - \partial_i A_k(\bar{x}) \partial^k A^i(\bar{x}) \right) \notag \\
+&= 2 \bar{B}^2.
+\end{align}
+So the spatial part of the Hamiltonian can be written as
+\begin{align}
+H_E = \int d^3 x \left( \frac{\bar{E}^2(\bar{x})}{2} + \frac{\bar{B}^2(\bar{x})}{2} \right) + \int d^3 x \ V(\bar{x}) \ \nabla \cdot \bar{E}(\bar{x}),
+\end{align}
+which is the classical result for the energy of the electromagnetic field. The first term is the kinetic term, the second term is the potential and the third term generates the gauge transformation $\bar{A}' = \bar{A} + \nabla \varepsilon$ that leaves the magnetic field $B$ unchanged.
