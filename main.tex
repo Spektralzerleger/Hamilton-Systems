@@ -1,0 +1,134 @@
+%Dokumentklasse
+\documentclass[a4paper,12pt,twoside]{scrreprt}
+\usepackage[left = 2.5cm, right = 2.5cm, top = 2.5 cm, bottom = 2.5cm]{geometry}
+\linespread{1}
+
+
+% Dokumentinformationen
+\usepackage[
+	pdftitle={Hamiltonian Systems with Constraints},
+	pdfsubject={},
+	pdfauthor={Eugen Dizer},
+	pdfkeywords={}
+	pdftex=true, 
+	colorlinks=true,
+ 	breaklinks=true,
+	citecolor=black,
+	linkcolor=black,	
+	menucolor=black,	
+	urlcolor=black
+]{hyperref}
+
+
+
+% Standard Packages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{graphicx, subfigure}
+\graphicspath{{img/}}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{transparent}
+\usepackage{tabularx}
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{fancyhdr}
+% zusätzliche Schriftzeichen der American Mathematical Society
+\usepackage{amsfonts}
+\usepackage{amsmath,bm}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+
+
+% nicht einrücken nach Absatz
+\setlength{\parindent}{0pt}
+
+
+% ============= Kopf- und Fußzeile =============
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}% gerade Seiten, links
+\fancyhead[RE]{\slshape \leftmark}% gerade Seiten, rechts
+\fancyhead[LO]{\slshape \rightmark}% ungerade Seiten, links
+
+% ============= Package Einstellungen & Sonstiges ============= 
+
+%Besondere Trennungen
+%\hyphenation{De-zi-mal-tren-nung St-rei-fen-licht-scan-nern}
+%\hyphenation{unserem}
+%\hyphenation{ersten}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{exercise}{Exercise}
+\newtheorem{example}{Example}
+
+\newenvironment{solution}
+               {\begin{proof}[\bfseries\upshape Solution\nopunct:]
+               \renewcommand{\qedsymbol}{}
+               \end{proof}}
+               
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}
+\makeatother
+
+\addto{\captionsenglish}{\renewcommand{\bibname}{Literature}}
+
+% ============= Dokumentbeginn =============
+
+\begin{document}
+
+\pagestyle{empty}
+\input{00_titlepage}
+
+\newpage
+%Seitennummerierung neu beginnen, Zahlen [arabic], röm.Zahlen [roman,Roman], Buchstaben [alph,Alph]
+\pagenumbering{roman}
+
+\renewcommand{\chapterheadstartvskip}{\vspace{0pt}}
+\renewcommand{\chapterheadendvskip}{\vspace{10pt}}
+
+\setkomafont{section}{\Large}
+\setkomafont{chapter}{\LARGE}
+
+\addcontentsline{toc}{chapter}{Preface}
+\input{01_preface}
+
+\newpage
+\addcontentsline{toc}{chapter}{Literature} 
+\nocite*
+\bibliographystyle{plaindin}
+\bibliography{Literatur}
+
+
+\newpage
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents
+
+
+\newpage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\input{02_introduction}
+\input{03_hamilton}
+\input{04_field}
+\input{05_electrodynamics}
+\input{06_string}
+\input{07_chromodynamics}
+\newpage
+\input{08_exercises}
+
+\end{document}
