@@ -1,0 +1,149 @@
+\chapter{Chromodynamics}
+
+In this last chapter we want to give a quick introduction to chromodynamics or the theory of strong interaction. This is really just a small overview of how the theory is built and how we can apply our Hamilton formalism. 
+Let's start with a fundamental observation:
+
+\begin{itemize}
+\item \textbf{Electrodynamics:} \\
+If we want to seperate an electron and a positron, we have to invest a finite energy.
+\item \textbf{Chromodynamics:} \\
+If we want to seperate a quark and an antiquark, we would need an infinite amount of energy. The field lines form a tube and get closer and closer the more we seperate the particles. The field energy and the fluctuations raise, so that we create new quarks which bind again before we can seperate the old ones. This process is called "color confinement".
+\end{itemize}
+
+So the physical properties of these two interactions are very different but the mathematical description is quite similar, as we will see.
+One often starts with the postulation of gauge invariance to introduce the theory of chromodynamics. We want to show a different approach with the same result: a matrix-generalization of electrodynamics. 
+In the end, we want to find a Lagrangian again and apply the Hamiltonian method. \\
+
+Let us introduce matrices $\hat{T}^a$, where $a = 1, \dots, n$ with the following properties:
+\begin{enumerate}
+\item $[ \hat{T}^a , \hat{T}^b ] = t^{abc} \hat{T}^c$ \ with real-valued coefficients $t^{abc}$.
+\item $\text{tr}(\hat{T}^a \hat{T}^b) = - 2 \delta^{ab}$.
+\item $( \hat{T}^a )^\dag = - \hat{T}^a$.
+\end{enumerate} 
+
+For $n=3$, we see that the following $3 \times 3$ matrices satisfy the required properties:
+\begin{align}
+\hat{T}^1 = 
+\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 0 & - 1 \\
+0 & 1 & 0 \\  
+\end{pmatrix}, \ \ \
+\hat{T}^2 = 
+\begin{pmatrix}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+- 1 & 0 & 0 \\  
+\end{pmatrix}, \ \ \
+\hat{T}^3 = 
+\begin{pmatrix}
+0 & - 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0 \\  
+\end{pmatrix}.
+\end{align}
+
+In group theory, this is often referred to the three-dimensional representation of SU(2). \footnote{Note that one can define $i \hat{T}^a \equiv \hat{\tilde{T}}^a$ and get the standard property of hermitian matrices: $( \hat{\tilde{T}}^a )^\dag = - \hat{\tilde{T}}^a$.} \\
+ 
+In nature, we observe the case $n=8$ which corresponds to the group SU(3). It turns out that this group describes strong interaction very well. The number 3 can be referred to the 3 colors of chromodynamics. \\
+
+The following developement of the theory doesn't depend on the number $n$ of matrices. For different $n$, we can get a different description. Just remember that $n=8$ is the case of strong interaction (chromodynamics).
+
+\pagebreak
+
+With the help of our matrices, we generalize the theory of electrodynamics in the following way. Instead of one electromagnetic potential field $A_{\mu}$, we take $n$ different electromagnetic potentials $A_{\mu}^a$:
+\begin{align*}
+\arraycolsep=10pt\def\arraystretch{1.6}
+\begin{array}{ccccc}
+ &  & Electrodynamics & & Chromodynamics \\
+q_i(t) & \longrightarrow & A_{\mu}(\bar{x},t) & \longrightarrow & A_{\mu}^a(\bar{x},t) \\
+i & \longrightarrow & \{ \bar{x},\mu \} & \longrightarrow & \{ \bar{x},a,\mu \}
+\end{array}
+\end{align*}
+and define the "gluon field" $\hat{A}_{\mu}(\bar{x},t)$:
+\begin{align}
+\hat{A}_{\mu}(\bar{x},t) = \sum_{a=1}^n \ A_{\mu}^a(\bar{x},t) \hat{T}^a.
+\end{align}
+
+A simple generalization would be:
+
+\begin{itemize}
+\item \textbf{Electrodynamics:} 
+\begin{align}
+L_{el}[A_{\mu}(\bar{x}), \dot{A}_{\mu}(\bar{x})] = - \frac{1}{4} \displaystyle\int d^3 x \ F_{\mu \nu}(\bar{x}) F^{\mu \nu}(\bar{x}) 
+\end{align}
+with the electromagnetic field tensor $F_{\mu \nu} = \partial_{\mu} A_{\nu} - \partial_{\nu} A_{\mu}$.
+\item \textbf{Chromodynamics:} 
+\begin{align}
+L_{ch}[A_{\mu}^a(\bar{x}), \dot{A}_{\mu}^a(\bar{x})] = \frac{1}{8} \displaystyle\int d^3 x \ \text{tr}\left(\hat{F}_{\mu \nu}(\bar{x}) \hat{F}^{\mu \nu}(\bar{x}) \right) 
+\end{align}
+with the "gluon field strength tensor" $\hat{F}_{\mu \nu} = \partial_{\mu} \hat{A}_{\nu} - \partial_{\nu} \hat{A}_{\mu}$.
+\end{itemize}
+
+When we write it in the form
+\begin{align}
+\hat{F}_{\mu \nu}(\bar{x}) = \sum_{a=1}^n F_{\mu \nu}^a(\bar{x}) \hat{T}^a ,
+\end{align}
+we get for the Lagrangian of chromodynamics:
+\begin{align}
+L_{ch} = - \frac{1}{4} \displaystyle\int d^3 x \ \sum_{a=1}^n \left( F_{\mu \nu}^a F^{a, \mu \nu} \right) .
+\end{align}
+
+But such a simple generalization doesn't lead to chromodynamics. We have to add another term and take
+\begin{align}
+\hat{F}_{\mu \nu} &= \partial_{\mu} \hat{A}_{\nu} - \partial_{\nu} \hat{A}_{\mu} + g [ \hat{A}_{\mu},\hat{A}_{\nu} ] \\
+F_{\mu \nu}^a &= \partial_{\mu} A_{\nu}^a - \partial_{\nu} A_{\mu}^a + g t^{abc} A_{\mu}^b A_{\nu}^c
+\end{align}
+as the gluon field strength tensor analog to the electromagnetic field tensor. \\
+This looks very similar to the curvature tensor of differential geometry. In fact, this extra term conserves the antisymmetry and vanishes in the case of electrodynamics ($n=1$). \\
+The equations of motion are non-linear now and the principle of superposition doesn't hold anymore (gluon fields interact with each other).
+
+\pagebreak
+
+The Hamiltonian procedure is the same, just a bit more complicated. We define
+\begin{align}
+A_{\mu}^a(\bar{x}) \ \ \ \longrightarrow \ \ \ \pi_{\mu}^a(\bar{x}) = \frac{\delta L}{\delta \dot{A}^{a, \mu}(\bar{x})}.
+\end{align}
+Then we build the Hamiltonian and get again a primary constraint.
+It turns out that the primary constraint has the same form like in electrodynamics:
+\begin{align}
+\phi_1 = \pi_0^a(\bar{x}) = 0.
+\end{align}
+
+The secondary constraint reads now:
+\begin{align}
+\phi_2 = \nabla \cdot \bar{\pi}^a + g t^{abc} \left( \bar{A}^b \bar{\pi}^c \right) = 0.
+\end{align}
+
+The procedure ends here and both constraints turn out to be first-class.
+The last term can be interpreted like the appearance of a charge in analogy to electrodynamics. If this term isn't zero, then we have interaction between different gluons. \\
+
+
+Which transformations do they generate? 
+\begin{align}
+\delta g = \varepsilon_a \{ g,\phi_a \}
+\end{align}
+
+We generalize this to arbitrary matrices $\hat{\omega}(\bar{x})$ by letting $\omega^a(\bar{x})$ be arbitrary functions:
+\begin{align}
+\hat{\omega}(\bar{x}) = \sum_{a=1}^n \ \omega^a(\bar{x}) \hat{T}^a.
+\end{align}
+
+After calculating the Poisson bracket with the constraints, we see that the space part changes like
+\begin{align}
+\hat{\bar{A}} \ \ &\longrightarrow \ \ \hat{\bar{A}}' = e^{- \hat{\omega}} \hat{\bar{A}} e^{\hat{\omega}} + e^{- \hat{\omega}} \nabla e^{\hat{\omega}} \\
+\hat{\bar{E}} \ \ &\longrightarrow \ \ \hat{\bar{E}}' = e^{- \hat{\omega}} \hat{\bar{E}} e^{\hat{\omega}} 
+\end{align}
+and $\hat{\omega}^\dag = - \hat{\omega}$ is antihermite because of the properties of $\hat{T}^a$. \\
+This is quite similar to electrodynamics, where we had:
+\begin{align}
+\bar{A}(\bar{x}) \ \ \longrightarrow \ \ \bar{A}'(\bar{x}) = \bar{A}(\bar{x}) + \nabla \omega(\bar{x}) .
+\end{align}
+
+One realizes that the field strength cannot be a physical quantity anymore but 
+\begin{align}
+\text{tr} ( (\hat{\bar{E}}')^2 ) = \text{tr} ( e^{- \hat{\omega}} \hat{\bar{E}} e^{\hat{\omega}} e^{- \hat{\omega}} \hat{\bar{E}} e^{\hat{\omega}} ) = \text{tr} ( \hat{\bar{E}}^2 ),
+\end{align}
+because of the gauge invariance. \\
+
+Our small overview ends with this short introduction. It is left to say that the theory turns out to be very complicated. Because of the non-linearity, gluons can interact with each other and create new gluons. Curious readers are advised to get familiar with the Yang-Mills theory.
