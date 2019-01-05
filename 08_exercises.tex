@@ -1,0 +1,597 @@
+\chapter{Exercises}
+
+Execute the whole generalized Hamiltonian procedure with the following Lagrangians and answer the beneath questions.
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} (\dot{x} + x \dot{y})^2 
+\end{align*}
+Primary constraints as generators of gauge transformations for systems with a finite number of degrees of freedom.
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = (\dot{x} + x \dot{y}) \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = x (\dot{x} + x \dot{y}).
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = x p_x - p_y = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H = p_x \dot{x} + p_y \dot{y} - \frac{1}{2} (\dot{x} + x \dot{y})^2 = p_x (\dot{x} + x \dot{y}) - \frac{1}{2} (\dot{x} + x \dot{y})^2 = \frac{1}{2} p_x^2.
+\end{align*}
+The total Hamiltonian at the moment is therefore
+\begin{align*}
+H_T = \frac{1}{2} p_x^2 + u_1 (x p_x - p_y).
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+0 \overset{?}{=} \dot{\phi}_1 = \left \{ \phi_1,H \right \} + u_1 \left \{ \phi_1,\phi_1 \right \} = \left \{ x p_x - p_y,\frac{1}{2} p_x^2 \right \} = p_x^2.
+\end{align*}
+So, we get a secondary constraint
+\begin{align*}
+\phi_2 = p_x = 0.
+\end{align*}
+Checking the conservation of this constraint, we get
+\begin{align*}
+\dot{\phi}_2 = \left \{ \phi_2,H_T \right \} = \left \{ p_x,\frac{1}{2} p_x^2 \right \} + u_1 \left \{ p_x,x p_x - p_y \right \} = - u_1 p_x \approx 0.
+\end{align*}
+Now, everything is consistent and we can classify the constraints. Since
+\begin{align*}
+\left \{ \phi_1,\phi_2 \right \} = \left \{ x p_x - p_y,p_x \right \} = p_x \approx 0,
+\end{align*}
+both constraints are first-class. \\
+Which transformations do they generate?
+\begin{align*}
+\Delta x &= \varepsilon \left \{ x,\phi_1 \right \} = \varepsilon \left \{ x,x p_x - p_y \right \} = \varepsilon x \\
+\Delta y &= \varepsilon \left \{ y,\phi_1 \right \} = - \varepsilon \\
+\Delta p_x &= \varepsilon \left \{ p_x,\phi_1 \right \} = - \varepsilon p_x \\
+\Delta p_y &= \varepsilon \left \{ p_y,\phi_1 \right \} = 0
+\end{align*}
+and 
+\begin{align*}
+\Delta x &= \varepsilon \left \{ x,\phi_2 \right \} = \varepsilon \left \{ x,p_x \right \} = \varepsilon \\
+\Delta y &= \varepsilon \left \{ y,\phi_2 \right \} = 0 \\
+\Delta p_x &= \varepsilon \left \{ p_x,\phi_2 \right \} = 0 \\
+\Delta p_y &= \varepsilon \left \{ p_y,\phi_2 \right \} = 0.
+\end{align*}
+
+The role of primary constraints as generators for gauge transformations can be found in section~\vref{sec:gauge_transformations}.
+\end{solution}
+
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} \dot{y}^2 + yx\dot{x}
+\end{align*}
+Connection between infintely small and finite gauge transformations. 
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = yx \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = \dot{y}.
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = p_x - yx = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H = p_x \dot{x} + p_y \dot{y} - \frac{1}{2} \dot{y}^2 - yx\dot{x} = \frac{1}{2} p_y^2.
+\end{align*}
+Therefore
+\begin{align*}
+H_T = \frac{1}{2} p_y^2 + u_1 (p_x - yx).
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+0 \overset{?}{=} \dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ p_x - yx,\frac{1}{2} p_y^2 \right \} = - x p_y.
+\end{align*}
+We get a secondary constraint
+\begin{align*}
+\phi_2 = x p_y = 0.
+\end{align*}
+Checking the conservation of this constraint, we get
+\begin{align*}
+\dot{\phi}_2 = \left \{ \phi_2,H_T \right \} = \left \{ x p_y,\frac{1}{2} p_y^2 \right \} + u_1 \left \{ x p_y,p_x - yx \right \} = u_1 (p_y + x^2),
+\end{align*}
+which is a condition on $u_1$, saying that $u_1 = 0$. \\
+So everything is consistent now and we can classify the constraints. Since
+\begin{align*}
+\left \{ \phi_1,\phi_2 \right \} \neq 0
+\end{align*}
+both constraints are second-class. It turns out that they are true second-class constraints and, in agreement with our theorem, the number is even. \\
+Since $u_1$ is determined, we have no degrees of freedom and the constraint does not generate gauge transformations. \\
+
+The connection between infintely small and finite gauge transformations can be found in section~\vref{sec:finite_gauge_transformations}.
+\end{solution}
+
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} (\dot{x}y + \dot{y}x)^2
+\end{align*}
+Constraints as generators of gauge transformations in electrodynamics. 
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = y (\dot{x}y + \dot{y}x) \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = x (\dot{x}y + \dot{y}x).
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = x p_x - y p_y = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H = p_x \dot{x} + p_y \dot{y} - \frac{1}{2} (\dot{x}y + \dot{y}x)^2 = p_x \left(\dot{x} + \frac{x \dot{y}}{y}\right) - \frac{1}{2} \left(\frac{p_x}{y}\right)^2 = \frac{p_x^2}{2 y^2}.
+\end{align*}
+The total Hamiltonian at the moment is therefore
+\begin{align*}
+H_T = \frac{p_x^2}{2 y^2} + u_1 (x p_x - y p_y).
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+\dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ x p_x - y p_y,\frac{p_x^2}{2 y^2} \right \} = p_x \frac{p_x}{y^2} + y p_x^2 \frac{(-2)}{2 y^3} = 0.
+\end{align*}
+So it is conserved identically at any time and we get no secondary constraints. The constraint is first-class and generates the following gauge transformations:
+\begin{align*}
+\Delta x &= \varepsilon \left \{ x,\phi_1 \right \} = \varepsilon \left \{ x,x p_x - y p_y \right \} = \varepsilon x \\
+\Delta y &= \varepsilon \left \{ y,\phi_1 \right \} = - \varepsilon y \\
+\Delta p_x &= \varepsilon \left \{ p_x,\phi_1 \right \} = - \varepsilon p_x \\
+\Delta p_y &= \varepsilon \left \{ p_y,\phi_1 \right \} = \varepsilon p_y.
+\end{align*}
+
+Constraints as generators of gauge transformations in electrodynamics can be found in chapter~\vref{sec:electrodynamics_transformations}.
+\end{solution}
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} (\dot{x}^2 - x^2) + \frac{1}{2} (\dot{y}^2 - y^2) + \dot{x}\dot{y}
+\end{align*}
+Show that the primary Poisson bracket is also a generator of gauge transformations. 
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = \dot{x} + \dot{y} \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = \dot{y} + \dot{x}.
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = p_x - p_y = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H &= p_x \dot{x} + p_y \dot{y} - \frac{1}{2} (\dot{x}^2 - x^2) - \frac{1}{2} (\dot{y}^2 - y^2) - \dot{x}\dot{y} \\
+&= p_x (\dot{x} + \dot{y}) - \frac{1}{2} (\dot{x} + \dot{y})^2 + \frac{1}{2} (x^2 + y^2) \\
+&= \frac{1}{2} p_x^2 + \frac{1}{2} (x^2 + y^2).
+\end{align*}
+The total Hamiltonian at the moment is therefore
+\begin{align*}
+H_T = \frac{1}{2} p_x^2 + \frac{1}{2} (x^2 + y^2) + u_1 (p_x - p_y).
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+0 \overset{?}{=} \dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ p_x - p_y,\frac{1}{2} p_x^2 + \frac{1}{2} (x^2 + y^2) \right \} = -x + y.
+\end{align*}
+We get a secondary constraint
+\begin{align*}
+\phi_2 = y - x = 0.
+\end{align*}
+Checking the conservation of this constraint, we get
+\begin{align*}
+0 \overset{!}{=} \dot{\phi}_2 = \left \{ \phi_2,H_T \right \} = \left \{ y - x,\frac{1}{2} p_x^2 + \frac{1}{2} (x^2 + y^2) \right \} + u_1  \left \{ y - x,p_x - p_y \right \} = - p_x - 2 u_1,
+\end{align*}
+which leaves us with the condition : $2 u_1 = - p_x$. \\
+Since the function $u_1$ is determined, we have no degrees of freedom and no gauge transformations. We can see this also because we have no first-class constraints:
+\begin{align*}
+\left \{ \phi_1,\phi_2 \right \} = \left \{ p_x - p_y,y - x \right \} = 2 \neq 0.
+\end{align*} 
+
+To show that the primary Poisson bracket is also a generator of gauge transformations see section~\vref{sec:gauge_transformations}.
+\end{solution}
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} (\dot{x} + \dot{y})^2 + \frac{1}{2} (x + y)^2
+\end{align*}
+Transition to Hamiltonian systems with an infinite number of degrees of freedom. \\
+Properties of the functional derivative. 
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = (\dot{x} + \dot{y}) \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = (\dot{x} + \dot{y}) .
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = p_x - p_y = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H &= p_x \dot{x} + p_y \dot{y} - \frac{1}{2} (\dot{x} + \dot{y})^2 - \frac{1}{2} (x + y)^2 \\
+&= p_x (\dot{x} + \dot{y}) - \frac{1}{2} (\dot{x} + \dot{y})^2 - \frac{1}{2} (x + y)^2 \\
+&= \frac{1}{2} p_x^2 - \frac{1}{2} (x + y)^2.
+\end{align*}
+The total Hamiltonian at the moment is therefore
+\begin{align*}
+H_T = \frac{1}{2} p_x^2 - \frac{1}{2} (x + y)^2 + u_1 (p_x - p_y).
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+0 \overset{?}{=} \dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ p_x - p_y,\frac{1}{2} p_x^2 - \frac{1}{2} (x + y)^2 \right \} = 0.
+\end{align*}
+Yes it is and we get no secondary constraints. \\
+The function $u_1$ is still arbitrary and $\phi_1$ generates the following gauge transformations:
+\begin{align*}
+\Delta x &= \varepsilon \left \{ x,\phi_1 \right \} = \varepsilon \left \{ x,p_x - p_y \right \} = \varepsilon \\
+\Delta y &= \varepsilon \left \{ y,\phi_1 \right \} = - \varepsilon \\
+\Delta p_x &= \varepsilon \left \{ p_x,\phi_1 \right \} = 0 \\
+\Delta p_y &= \varepsilon \left \{ p_y,\phi_1 \right \} = 0.
+\end{align*}
+
+The transition to Hamiltonian systems with an infinite number of degrees of freedom and the properties of the functional derivative can be found in chapter~\ref{sec:field_theory}.
+\end{solution}
+
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = x \dot{y} - y \dot{x} - x - y
+\end{align*}
+Mechanical analogy to the scalar Klein-Gordon-Fock field.
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = -y \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = x.
+\end{align*}
+We get two constraints:
+\begin{align*}
+\phi_1 &= p_x + y = 0 \\
+\phi_2 &= p_y - x = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H &= p_x \dot{x} + p_y \dot{y} - x \dot{y} + y \dot{x} + x + y \\
+&= x + y.
+\end{align*}
+The total Hamiltonian at the moment is therefore
+\begin{align*}
+H_T = x + y + u_1 (p_x + y) + u_2 (p_y - x).
+\end{align*}
+Are the constraints conserved?
+\begin{align*}
+0 &\overset{?}{=} \dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ p_x + y,x + y \right \} + u_2 \left \{ p_x + y,p_y - x \right \} = -1 + 2 u_2. \\
+0 &\overset{?}{=} \dot{\phi}_2 = \left \{ \phi_2,H_T \right \} = \left \{ p_y - x,x + y \right \} + u_1 \left \{ p_y - x,p_x + y \right \} = -1 - 2 u_1.
+\end{align*}
+We get no secondary constraints. These are just equations that determine $u_1$ and $u_2$, which is clear since our constraints are second-class:
+\begin{align*}
+\left \{ \phi_1,\phi_2 \right \} \neq 0.
+\end{align*}
+Since the constraints are second-class and we have no degrees of freedom left, they do not generate gauge transformations. \\
+
+The mechanical analogy to the scalar Klein-Gordon-Fock field is the standard harmonic oscillator.
+\end{solution}
+
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} (\dot{x} - y)^2
+\end{align*}
+Dirac bracket (generalized Poisson bracket).
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = (\dot{x} - y) \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = 0.
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = p_y = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H &= p_x \dot{x} + p_y \dot{y} - \frac{1}{2} (\dot{x} - y)^2 = p_x (p_x + y) - \frac{1}{2} p_x^2 = \frac{1}{2} p_x^2 + p_x y.
+\end{align*}
+The total Hamiltonian at the moment is therefore
+\begin{align*}
+H_T = \frac{1}{2} p_x^2 + p_x y + u_1 p_y.
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+0 \overset{?}{=} \dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ p_y,\frac{1}{2} p_x^2 + p_x y \right \} = - p_x.
+\end{align*}
+We get a secondary constraint 
+\begin{align*}
+\phi_2 = p_x = 0.
+\end{align*}
+Checking the consistency condition, we get
+\begin{align*}
+\dot{\phi}_2 = \left \{ \phi_2,H_T \right \} = \left \{ p_x,\frac{1}{2} p_x^2 + p_x y \right \} + u_1 \left \{ p_x,p_y \right \} = 0.
+\end{align*}
+Since 
+\begin{align*}
+\left \{ \phi_1,\phi_2 \right \} = 0
+\end{align*}
+both constraints are first-class and generate the following gauge transformations:
+\begin{align*}
+\Delta x &= \varepsilon \left \{ x,\phi_1 \right \} = \varepsilon \left \{ x,p_y \right \} = 0 \\
+\Delta y &= \varepsilon \left \{ y,\phi_1 \right \} = \varepsilon \\
+\Delta p_x &= \varepsilon \left \{ p_x,\phi_1 \right \} = 0 \\
+\Delta p_y &= \varepsilon \left \{ p_y,\phi_1 \right \} = 0
+\end{align*}
+and
+\begin{align*}
+\Delta x &= \varepsilon \left \{ x,\phi_2 \right \} = \varepsilon \left \{ x,p_x \right \} = \varepsilon \\
+\Delta y &= \varepsilon \left \{ y,\phi_2 \right \} = 0 \\
+\Delta p_x &= \varepsilon \left \{ p_x,\phi_2 \right \} = 0 \\
+\Delta p_y &= \varepsilon \left \{ p_y,\phi_2 \right \} = 0.
+\end{align*}
+
+The Dirac bracket and its properties can be found in section~\vref{sec:dirac_bracket}.
+\end{solution}
+
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} (\dot{x} + \dot{y})^2 - \frac{x^2}{2}
+\end{align*}
+Show that there only exists an even number of secondary constraints.
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = (\dot{x} + \dot{y}) \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = (\dot{x} + \dot{y}).
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = p_x - p_y = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H &= p_x \dot{x} + p_y \dot{y} - \frac{1}{2} (\dot{x} + \dot{y})^2 + \frac{x^2}{2} = \frac{1}{2} p_x^2 + \frac{x^2}{2}.
+\end{align*}
+The total Hamiltonian at the moment is therefore
+\begin{align*}
+H_T = \frac{1}{2} p_x^2 + \frac{x^2}{2} + u_1 (p_x - p_y).
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+0 \overset{?}{=} \dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ p_x - p_y,\frac{1}{2} p_x^2 + \frac{x^2}{2} \right \} = - x.
+\end{align*}
+We get a secondary constraint 
+\begin{align*}
+\phi_2 = x = 0.
+\end{align*}
+Checking the consistency condition, we get
+\begin{align*}
+0 \overset{!}{=} \dot{\phi}_2 = \left \{ \phi_2,H_T \right \} = \left \{ x,\frac{1}{2} p_x^2 + \frac{x^2}{2} \right \} + u_1 \left \{ x,p_x - p_y \right \} = p_x + u_1.
+\end{align*}
+This leaves us with the condition $u_1 = - p_x$. We note that 
+\begin{align*}
+\left \{ \phi_1,\phi_2 \right \} = \left \{ p_x - p_y,x \right \} = - 1 \neq 0
+\end{align*}
+wich means that both constraints are second-class, so we don't have any degrees of gauge freedom. \\
+
+The proof that there only exists an even number of secondary constraints can be found in section~\vref{sec:number_secondary_constraints}.
+\end{solution}
+
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} (\dot{x} - \dot{y})^2 - \frac{1}{2} (x + y)^2
+\end{align*}
+Conservation of secondary constraints in electrodynamics.
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = (\dot{x} - \dot{y}) \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = - (\dot{x} - \dot{y}).
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = p_x + p_y = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H &= p_x \dot{x} + p_y \dot{y} - \frac{1}{2} (\dot{x} - \dot{y})^2 + \frac{1}{2} (x + y)^2 = \frac{1}{2} p_x^2 + \frac{1}{2} (x + y)^2.
+\end{align*}
+The total Hamiltonian at the moment is therefore
+\begin{align*}
+H_T = \frac{1}{2} p_x^2 + \frac{1}{2} (x + y)^2 + u_1 (p_x + p_y).
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+0 \overset{?}{=} \dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ p_x + p_y,\frac{1}{2} p_x^2 + \frac{1}{2} (x + y)^2 \right \} = - 2 (x + y).
+\end{align*}
+We get a secondary constraint 
+\begin{align*}
+\phi_2 = x + y = 0.
+\end{align*}
+Checking the consistency condition, we get
+\begin{align*}
+0 \overset{!}{=} \dot{\phi}_2 = \left \{ \phi_2,H_T \right \} = \left \{ x + y,\frac{1}{2} p_x^2 + \frac{1}{2} (x + y)^2 \right \} + u_1 \left \{ x + y,p_x + p_y \right \} = p_x + 2 u_1.
+\end{align*}
+This leaves us with the condition $u_1 = - p_x / 2$. We note that 
+\begin{align*}
+\left \{ \phi_1,\phi_2 \right \} = \left \{ p_x + p_y,x + y \right \} = - 2 \neq 0
+\end{align*}
+wich means that both constraints are second-class, so we don't have any degrees of gauge freedom. \\
+
+Secondary constraints in electrodynamics can be found in chapter~\vref{sec:electrodynamics_secondary_constraints}.
+\end{solution}
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} (\dot{x} + \dot{y})^2 + \dot{x} + \dot{y}
+\end{align*}
+Secondary constraints in electrodynamics.
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = (\dot{x} + \dot{y}) + 1 \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = (\dot{x} + \dot{y}) + 1.
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = p_x - p_y = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H &= p_x \dot{x} + p_y \dot{y} - \frac{1}{2} (\dot{x} + \dot{y})^2 - \dot{x} - \dot{y} \\
+&= p_x (p_x - 1) - \frac{1}{2} (p_x - 1)^2 - p_x + 1 \\
+&= \frac{1}{2} p_x^2 - p_x + \frac{1}{2} \\
+&= \frac{1}{2} (p_x - 1)^2.
+\end{align*}
+The total Hamiltonian is therefore
+\begin{align*}
+H_T = \frac{1}{2} (p_x - 1)^2 + u_1 (p_x - p_y).
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+\dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ p_x - p_y,\frac{1}{2} (p_x - 1)^2 \right \} = 0.
+\end{align*}
+Yes it is, so we get no secondary constraints. The function $u_1$ is still arbitrary and $\phi_1$ generates the following gauge transformations:
+\begin{align*}
+\Delta x &= \varepsilon \left \{ x,\phi_1 \right \} = \varepsilon \left \{ x,p_x - p_y \right \} = \varepsilon \\
+\Delta y &= \varepsilon \left \{ y,\phi_1 \right \} = - \varepsilon \\
+\Delta p_x &= \varepsilon \left \{ p_x,\phi_1 \right \} = 0 \\
+\Delta p_y &= \varepsilon \left \{ p_y,\phi_1 \right \} = 0.
+\end{align*}
+
+Secondary constraints in electrodynamics can be found in chapter~\vref{sec:electrodynamics_secondary_constraints}.
+\end{solution}
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} (\dot{x} + \dot{y})^2 + \dot{x} + 2 \dot{y}
+\end{align*}
+Hamiltonian of electrodynamics.
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = (\dot{x} + \dot{y}) + 1 \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = (\dot{x} + \dot{y}) + 2.
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = p_x - p_y + 1 = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H &= p_x \dot{x} + p_y \dot{y} - \frac{1}{2} (\dot{x} + \dot{y})^2 - \dot{x} - 2 \dot{y} \\
+&= p_x \dot{x} + (p_x + 1) \dot{y} - \frac{1}{2} (\dot{x} + \dot{y})^2 - \dot{x} - 2 \dot{y} \\
+&= p_x (p_x - 1) - \frac{1}{2} (p_x - 1)^2 - (p_x - 1) \\
+&= \frac{1}{2} (p_x - 1)^2.
+\end{align*}
+The total Hamiltonian is therefore
+\begin{align*}
+H_T = \frac{1}{2} (p_x - 1)^2 + u_1 (p_x - p_y + 1).
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+\dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ p_x - p_y + 1,\frac{1}{2} (p_x - 1)^2 \right \} = 0.
+\end{align*}
+Yes it is, so we get no secondary constraints. The function $u_1$ is still arbitrary and $\phi_1$ generates the following gauge transformations:
+\begin{align*}
+\Delta x &= \varepsilon \left \{ x,\phi_1 \right \} = \varepsilon \left \{ x,p_x - p_y + 1 \right \} = \varepsilon \\
+\Delta y &= \varepsilon \left \{ y,\phi_1 \right \} = - \varepsilon \\
+\Delta p_x &= \varepsilon \left \{ p_x,\phi_1 \right \} = 0 \\
+\Delta p_y &= \varepsilon \left \{ p_y,\phi_1 \right \} = 0.
+\end{align*}
+
+The Hamiltonian of electrodynamics can be found in chapter~\vref{sec:electrodynamics_hamiltonian}.
+\end{solution}
+
+
+
+
+\begin{exercise}
+\begin{align*}
+L = \frac{1}{2} (\dot{x} - \dot{y})^2 - \dot{x} - \frac{x^2}{2}
+\end{align*}
+Primary constraints in electrodynamics.
+\end{exercise}
+\begin{solution}
+The generalized momenta are
+\begin{align*}
+p_x &= \frac{\partial L}{\partial \dot{x}} = (\dot{x} - \dot{y}) - 1 \\
+p_y &= \frac{\partial L}{\partial \dot{y}} = -(\dot{x} - \dot{y}).
+\end{align*}
+We get the constraint 
+\begin{align*}
+\phi_1 = p_x + p_y + 1 = 0.
+\end{align*}
+The Hamiltonian is
+\begin{align*}
+H &= p_x \dot{x} + p_y \dot{y} - \frac{1}{2} (\dot{x} - \dot{y})^2 + \dot{x} + \frac{x^2}{2} \\
+&= (-p_y - 1) \dot{x} + p_y \dot{y} - \frac{1}{2} p_y^2 + \dot{x} + \frac{x^2}{2} \\
+&= p_y (\dot{y} - \dot{x}) - \frac{1}{2} p_y^2 + \frac{x^2}{2} \\
+&= \frac{1}{2} p_y^2 + \frac{x^2}{2}.
+\end{align*}
+The total Hamiltonian is therefore
+\begin{align*}
+H_T = \frac{1}{2} p_y^2 + \frac{x^2}{2} + u_1 (p_x + p_y + 1).
+\end{align*}
+Is the constraint conserved?
+\begin{align*}
+0 \overset{?}{=} \dot{\phi}_1 = \left \{ \phi_1,H_T \right \} = \left \{ p_x + p_y + 1, \frac{1}{2} p_y^2 + \frac{x^2}{2} \right \} = - x.
+\end{align*}
+We get a secondary constraint 
+\begin{align*}
+\phi_2 = x = 0.
+\end{align*}
+Checking the consistency condition, we get
+\begin{align*}
+0 \overset{!}{=} \dot{\phi}_2 = \left \{ \phi_2,H_T \right \} = \left \{ x,\frac{1}{2} p_y^2 + \frac{x^2}{2} \right \} + u_1 \left \{ x,p_x + p_y + 1 \right \} = u_1.
+\end{align*}
+This leaves us with the condition $u_1 = 0$. We note that 
+\begin{align*}
+\left \{ \phi_1,\phi_2 \right \} = \left \{ p_x + p_y + 1,x \right \} = - 1 \neq 0,
+\end{align*}
+wich means that both constraints are second-class, so we don't have any degrees of gauge freedom. \\
+
+The primary constraints of electrodynamics can be found in chapter~\vref{sec:electrodynamics_primary_constraints}.
+\end{solution}
